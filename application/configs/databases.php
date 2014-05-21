@@ -1,0 +1,20 @@
+<?php
+/**
+ * xenFramework (http://xenframework.com/)
+ *
+ * @link        http://github.com/xenframework for the canonical source repository
+ * @copyright   Copyright (c) xenFramework. (http://xenframework.com)
+ * @license     Affero GNU Public License - http://en.wikipedia.org/wiki/Affero_General_Public_License
+ */
+
+return array(
+    'db1' => array(
+        'driver'    => 'mysql',
+        'hostname'  => 'localhost',
+        'port'      => '',
+        'dbname'    => 'databasename',
+        'username'  => 'user',
+        'password'  => 'pass',
+        'charset'   => 'utf8',
+    ),
+);

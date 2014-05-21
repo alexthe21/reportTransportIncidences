@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="<?php echo $this->charset; ?>">
+        <meta name="description" content="<?php echo $this->description; ?>">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="alejandro jurado">
+        <link rel="shortcut icon" href="/images/tlsa.ico">
+
+        <title><?php echo $this->title; ?></title>
+
+        <link href="/css/nivo-lightbox.css" rel="stylesheet">
+        <link href="/css/default-nivo.css" rel="stylesheet">
+        <!-- Bootstrap -->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+        <!-- Custom styles for this template -->
+        <link href="/css/starter-template.css" rel="stylesheet">
+        <link href="/css/tableSorterThemeBlue.css" rel="stylesheet">
+        
+        <script src="/js/jquery-1.11.0.min.js"></script>
+        
+        
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <!--<script src="/public/js/jquery-1.8.2.min.js"></script>-->
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- Fixed navbar -->
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">OTFOTO</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <?php if ($this->loggedUser != ''): ?>
+                        <p class="navbar-text navbar-right"><a href="/login/logOut/" class="navbar-link"><?php $this->out($this->loggedUser); ?></a></p>
+                    <?php endif; ?>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+        <div class="container theme-showcase">
+

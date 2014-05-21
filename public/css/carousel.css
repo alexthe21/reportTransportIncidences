@@ -1,0 +1,34 @@
+.list_carousel li {
+    font-size: 40px;
+    color: #999;
+    text-align: center;
+    background-color: #eee;
+    padding: 0;
+    margin: 6px;
+    display: block;
+    float: left;
+}
+.list_carousel.responsive {
+    width: auto;
+    margin-left: 0;
+}
+.clearfix {
+    float: none;
+    clear: both;
+}
+.prev {
+    float: left;
+    margin-left: 10px;
+}
+.next {
+    float: right;
+}
+.pager {
+    float: left;
+    width: 1000px;
+    text-align: center;
+}
+.pager a {
+    margin: 0 5px;
+    text-decoration: none;
+}

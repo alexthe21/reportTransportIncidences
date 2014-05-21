@@ -1,0 +1,29 @@
+<h1><?php echo $this->title ?></h1>
+
+<div>
+    <?php echo $this->_viewHelperBroker->getHelper('AdminMenuHelper')->show(); ?>
+</div>
+
+<div>
+    <?php echo $this->_viewHelperBroker->getHelper(
+        'FormHelper',
+        array('action'      => '/admin/addClientDo/',
+              'id'          => 'fr1',
+              'method'      => 'post',
+              'buttonValue' => 'Nuevo Cliente',
+              'controls'    => array(
+                  array(
+                      'field'   => 'id',
+                      'type'    => 'number',
+                  ),
+                  array(
+                      'field'   => 'nombre',
+                      'type'    => 'text',
+                  ),
+                  array(
+                      'field'   => 'email',
+                      'type'    => 'email',
+                  )
+              )
+        ))->show(); ?>
+</div>

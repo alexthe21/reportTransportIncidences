@@ -1,0 +1,59 @@
+<h1><?php $this->out($this->title); ?></h1>
+
+<div>
+    <?php //echo $this->_viewHelperBroker->getHelper('ClientsMenuHelper')->show(); ?>
+</div>
+
+<div>
+    <?php if (isset($this->ots) && sizeof($this->ots) > 0): ?>
+        <table id="listOts" class="tablesorter-blue">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Matricula</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($this->ots as $ot): ?>
+                    <tr>
+                        <td><?php $this->out($ot->getFechaHora()->format('d/m/Y')); ?></td>
+                        <td><?php $this->out($ot->getMatricula()); ?></td>
+                        <td><div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">
+                                    Opciones <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="/clients/describeOt/plate/<?php echo $ot->getMatricula() ?>/date/<?php echo $ot->getFechaHora()->format('Y-m-d')?>/">Detalle</a></li>
+                                    <li><a href="/clients/reportIncidence/plate/<?php echo $ot->getMatricula() ?>/date/<?php echo $ot->getFechaHora()->format('Y-m-d')?>/">Informar de incidencia</a></li>
+                                    <!--<li class="divider"></li>-->
+                                </ul>
+                            </div></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+        <div id="pager" class="pager">
+            <form>
+                <img src="/js/tablesorter/addons/pager/icons/first.png" class="first"/>
+                <img src="/js/tablesorter/addons/pager/icons/prev.png" class="prev"/>
+                <input type="text" class="pagedisplay"/>
+                <img src="/js/tablesorter/addons/pager/icons/next.png" class="next"/>
+                <img src="/js/tablesorter/addons/pager/icons/last.png" class="last"/>
+                <select class="pagesize">
+                    <option selected="selected"  value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option  value="40">40</option>
+                </select>
+            </form>
+        </div>
+    <?php else: ?>
+        <div class="alert alert-warning"><span class="glyphicon glyphicon-warning-sign"></span> No constan órdenes de transporte a su nombre</div>
+    <?php endif; ?>
+
+</div>
+<div>
+    <?php $this->partial('importjQuery')->render(); ?>
+    <?php $this->partial('importTableSorterListOts')->render(); ?>
+</div>
